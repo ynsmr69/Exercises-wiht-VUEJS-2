@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="home">home sayfasi</div>
+    <v-btn v-on:click="onClick('/users')" class="mb-4">Kullanicilar</v-btn>
+    <br />
+    <v-btn v-on:click="onClick('/about')">Hakkimizda</v-btn>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  name: "HomeView",
+  methods: {
+    onClick(path) {
+      this.$router.push(path);
+    },
+  },
+};
 </script>
